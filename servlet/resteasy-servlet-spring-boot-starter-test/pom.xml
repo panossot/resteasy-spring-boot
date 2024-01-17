@@ -92,7 +92,35 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
             <version>${springboot.version}</version>
+	    <exclusions>
+                    <exclusion>
+			<groupId>jakarta.servlet</groupId>
+            		<artifactId>jakarta.servlet-api</artifactId>
+                    </exclusion>
+		    <exclusion>
+			<groupId>org.springframework.boot</groupId>
+            		<artifactId>spring-boot-starter-tomcat</artifactId>
+                    </exclusion>
+		    <exclusion>
+		      <groupId>org.apache.tomcat.embed</groupId>
+		      <artifactId>tomcat-embed-core</artifactId>
+		    </exclusion>
+		    <exclusion>
+		      <groupId>org.apache.tomcat.embed</groupId>
+		      <artifactId>tomcat-embed-websocket</artifactId>
+		    </exclusion>
+		    <exclusion>
+		      <groupId>org.apache.tomcat.embed</groupId>
+		      <artifactId>tomcat-embed-el</artifactId>
+		    </exclusion>
+                </exclusions>
         </dependency>
+<dependency>
+    <groupId>jakarta.servlet</groupId>
+    <artifactId>jakarta.servlet-api</artifactId>
+    <version>6.0.0</version>
+    <scope>provided</scope>
+</dependency>
         <dependency>
             <groupId>jakarta.xml.bind</groupId>
             <artifactId>jakarta.xml.bind-api</artifactId>

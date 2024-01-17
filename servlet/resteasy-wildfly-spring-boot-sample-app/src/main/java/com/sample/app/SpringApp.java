@@ -2,6 +2,7 @@ package com.sample.app;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
 
@@ -17,4 +18,8 @@ public class SpringApp extends SpringBootServletInitializer {
         SpringApplication.run(SpringApp.class, args);
     }
 
+    @Override
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder springApplicationBuilder) {
+        return springApplicationBuilder.sources(SpringApp.class);
+    }
 }
